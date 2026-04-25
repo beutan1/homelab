@@ -1,0 +1,22 @@
+# Ignore environment variables
+.env
+secrets/
+*.password
+
+# Ignore large data files
+**/data/
+**/music/
+**/config/
+
+# Ignore system and log files
+*.log
+.DS_Store
+thumbs.db
+
+# Docker
+.docker/
+
+# Ignore AdGuard data & config
+adguard/workdir/
+adguard/confdir/
+
