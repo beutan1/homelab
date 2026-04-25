@@ -25,14 +25,12 @@
             "id": "dc63a086adcf7714",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/img/Screenshot_20260423_145625_Instagram.jpg"
               },
-              "icon": "lucide-file",
-              "title": "README"
+              "icon": "lucide-image",
+              "title": "Screenshot_20260423_145625_Instagram"
             }
           }
         ],
@@ -198,9 +196,10 @@
   },
   "active": "dc63a086adcf7714",
   "lastOpenFiles": [
+    "docs/img/Screenshot 2026-04-25 at 4.55.31 PM.png",
+    "README.md",
     "docs/img/DSC00339.jpg",
     "docs/Initial Setup.md",
-    "README.md",
     "Home Server/Initial Setup.md",
     "Home Server/AdGuard DNS.md",
     "Home Server/Docker.md",
@@ -214,7 +213,6 @@
     "Home Server/Screenshot_20260423_145823_One UI Home.jpg",
     "Home Server/Screenshot_20260423_150202_Spotify.jpg",
     "Home Server/Screenshot_20260423_150730_One UI Home.jpg",
-    "Home Server/Screenshot_20260423_150535_Chess.jpg",
     "Untitled.md",
     "Home Server",
     "133/OSPF Summary LSA.md",
