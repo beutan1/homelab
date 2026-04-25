@@ -21,4 +21,4 @@ run `sudo dpkg-reconfigure console-setup` and select 16x32.
 ## TLP Battery Management for Server Longevity
 ADD THINGS HERE ABOUT HOW YOU CONFIGURED TLP
 
-And then after this, the server was ready for [[Docker]] installation.
+And then after this, the server was ready for [Docker](Docker.md) installation.
