@@ -2,7 +2,7 @@
 > Music streaming service from my home server to store my favorite songs and my personal CD collection to play on my phone and my girlfriend's phone, on home network or anywhere.
 
 ## Installation process
-Like AdGuard DNS, I wanted to use a [[Docker]] Image to make the installation easy.
+Like AdGuard DNS, I wanted to use a [Docker](Docker.md) Image to make the installation easy.
 I used the official documentation for Navidrome on https://www.navidrome.org/docs/installation/docker/
 
 Using their provided `yml` file outline, I filled mine out like this:
@@ -46,25 +46,25 @@ I was able to run this command at home, as well as at school, as long as I was c
 ## Tailscale issues on phone
 I had several issues once I established a connection to Tailscale to listen to music.
 1. Gif comments were not displaying on Instagram
-	![[Screenshot_20260423_145625_Instagram.jpg|300]]
+<img src="img/Screenshot_20260423_145625_Instagram.jpg" style="max-width: 100%; width: 300px;">
 2. Text messages on Discord were not sending properly
-	![[Screenshot_20260423_150730_One UI Home.jpg|300]]
-3. Chess app would not load properly
-	![[Screenshot_20260423_150535_Chess.jpg|300]]
-4. Spotify would think that I am offline
-	![[Screenshot_20260423_150202_Spotify.jpg|300]]
-5. Network has no internet access error 
-	![[Screenshot_20260423_145823_One UI Home.jpg|300]]
+<img src="img/Screenshot_20260423_150730_One UI Home.jpg" style="max-width: 100%; width: 300px;">
+4. Chess app would not load properly
+<img src="img/Screenshot_20260423_150535_Chess.jpg" style="max-width: 100%; width: 300px;">
+5. Spotify would think that I am offline
+<img src="img/Screenshot_20260423_150202_Spotify.jpg" style="max-width: 100%; width: 300px;">
+6. Network has no internet access error 
+<img src="img/Screenshot_20260423_145823_One UI Home.jpg" style="max-width: 100%; width: 300px;">
 
 ### Solution
-When consulting with Gemini on this, it suggested that there was issues with DNS, and it could not translate things like `spotify.com` into IP addresses.
+The issue that I had was that I had a custom Private DNS on my phone to `dns.adguard-dns.com` to block ads. Once I set this to Off, the issue was fixed, resolving the existing DNS settings conflict.
 
-The issue that I had was that I had a custom Private DNS on my phone to `dns.adguard-dns.com` to block ads. Once i set this to Off, the issue was fixed.
-![[Screenshot_20260423_165318_Settings.jpg|250]]
+<img src="img/Screenshot_20260423_165318_Settings.jpg" style="max-width: 100%; width: 250px;">
 
-The issue now became: How was I going to block ads?
+## The issue now became: How was I going to block ads?
 
-The solution to this would be to actually put AdGuard DNS on Tailscale, since I'm already going to be connected to it. That way, there would be no DNS conflict.
-![[Screenshot 2026-04-23 at 4.58.49 PM.png]]
+The solution to this would be to actually put AdGuard DNS on Tailscale, since I'm already going to be connected to it. That way, there would be no DNS conflict. Since I already have AdGuard DNS running on my home server, there isn't a reason to rely on their public IP address for their ad blocking, as I have my own.
+
+<img src="Screenshot 2026-04-25 at 4.55.31 PM.png" style="max-width: 100%; width: 250px;">
 
 > Now, I simply went onto the Tailscale admin page to add the IP address of my own Thinkpad which is running an active AdGuard container.
