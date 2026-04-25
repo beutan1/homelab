@@ -7,8 +7,8 @@ Thus, I installed Ubuntu Server on it with hopes of turning it into a server, in
 # Uses
 Having now had this server for almost two weeks, I have been using it to block ads using AdGuard DNS, and to stream my personal CD collection and other music that I have downloaded. This allows me to save money from subscription services like Spotify, and having used TailScale, provide free music streaming to my beautiful girlfriend!
 
-More info can be found in the `/docs` folder, starting with [[Initial Setup]].
+More info can be found in the `/docs` folder, starting with [Initial Setup](</docs/Initial Setup.md>).
 
 Thank you for reading this!
 
-![[DSC00339.jpg]]
+![](/docs/img/DSC00339.jpg)
