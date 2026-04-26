@@ -29,7 +29,7 @@ sudo apt install tlp tlp-rdw
 
 Then, I had to configure TLP using this `.conf` file.
 ```bash
-sudo vim /etc/tlp.conf`
+sudo vim /etc/tlp.conf
 ```
 
 I had to set these following lines:
