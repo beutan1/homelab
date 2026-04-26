@@ -89,8 +89,6 @@ What I had to do was to go into Network settings, DNS Server, and put my Thinkpa
 
 Then, on my phone, I had to go into my apartment's wifi from Verizon, and change change IP settings to Static, with my ThinkPad's IP address.
 
-<img src="img/Screenshot_20260425_175945_Settings.jpg" style="max-width: 100%; width: 300px;">
-
 After that, it should work, but the above steps get it working for laptops like my Macbook.
 
 <img src="img/Screenshot_20260425_123947_Vivaldi.jpg" style="max-width: 100%; width: 300px;">
