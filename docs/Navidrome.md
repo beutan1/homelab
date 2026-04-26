@@ -26,7 +26,7 @@ Another issue that I had was that I did not remove the `environment:` key given,
 Finally, I was able to simply run `docker-compose up -d` to run Navidrome in its own container, and verify that it was running with `sudo docker compose logs -f` in the Navidrome directory.
 
 ## Using Navidrome & Uploading Music
-Due to my earlier choice to use Tailscale, I can use my address provided by tailscale, and the given port number that is reserved for Navidrome to create a user once I verified that the app was working.
+Due to my earlier choice to use Tailscale, I can use my address provided by TailScale, and the given port number that is reserved for Navidrome to create a user once I verified that the app was working.
 
 Now, the next step was to add music.
 
@@ -34,11 +34,11 @@ There were 2 kinds of music that I was going to add:
 1. My own personal CD rips
 2. Online-sourced CD rips
 
-For the online CD rips, I used SoulSeek to find the music, and download it to my personal computer where the rest of my personal CD rips are. Then, copying the pathnames of each album that I was uploading, I was able to run the following command to upload my music to my server (named thinkpad for SSHing)
+For the online CD rips, I used [SoulSeek](https://www.slsknet.org/news/) to find the music, and download it to my personal computer where the rest of my personal CD rips are. Then, copying the pathnames of each album that I was uploading, I was able to run the following command to upload my music to my server (named thinkpad for SSHing)
 
 `scp -r [album-path] thinkpad:~/music`
-![[Screenshot 2026-04-23 at 4.28.17 PM.png]]
-![[Screenshot 2026-04-23 at 4.29.07 PM.png]]
+<img src="img/Screenshot 2026-04-23 at 4.28.17 PM.png">
+<img src="img/Screenshot 2026-04-23 at 4.29.07 PM.png">
 > Where we can see that after running the command, the files are moved to the server, and are playable through Navidrome
 
 I was able to run this command at home, as well as at school, as long as I was connected to my server via Tailscale.
