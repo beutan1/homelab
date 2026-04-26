@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Navidrome.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Navidrome"
+              "title": "README"
             }
           }
         ],
@@ -196,26 +196,27 @@
   },
   "active": "3e4d61239ff17c06",
   "lastOpenFiles": [
+    "docs/img/20260426_135901-2.jpg",
+    "docs/img/20260426_135901.jpg",
+    "docs/img/Screenshot_20260425_123947_Vivaldi.jpg",
+    "README.md",
+    "docs/Navidrome.md",
     "docs/AdGuard DNS.md",
     "docs/img/Screenshot 2026-04-25 at 7.15.58 PM.png",
-    "docs/img/Screenshot_20260425_123947_Vivaldi.jpg",
     "docs/img/Screenshot_20260425_175945_Settings.jpg",
     "docs/Initial Setup.md",
     "docs/Docker.md",
-    "docs/Navidrome.md",
     "Screenshot.md",
     "docs/img/Screenshot 2026-04-25 at 4.55.31 PM.png",
     "docs/img/Screenshot 2026-04-25 at 5.45.27 PM.png",
     "docs/img/Screenshot 2026-04-23 at 4.29.07 PM.png",
     "docs/img/Screenshot 2026-04-23 at 4.28.17 PM.png",
     "docs/img/Screenshot_20260423_145625_Instagram.jpg",
-    "README.md",
     "docs/img/DSC00339.jpg",
     "Home Server/Initial Setup.md",
     "Home Server/AdGuard DNS.md",
     "Home Server/Docker.md",
     "Home Server/Navidrome.md",
-    "Home Server/Screenshot_20260423_145625_Instagram.jpg",
     "Untitled.md",
     "Home Server",
     "133/OSPF Summary LSA.md",
