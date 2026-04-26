@@ -11,26 +11,26 @@
             "id": "574b465104fb5500",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "docs/Initial Setup.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/img/Screenshot_20260425_123947_Vivaldi.jpg"
               },
-              "icon": "lucide-file",
-              "title": "Initial Setup"
+              "icon": "lucide-image",
+              "title": "Screenshot_20260425_123947_Vivaldi"
             }
           },
           {
-            "id": "dc63a086adcf7714",
+            "id": "3e4d61239ff17c06",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "docs/img/Screenshot_20260423_145625_Instagram.jpg"
+                "file": "docs/AdGuard DNS.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Screenshot_20260423_145625_Instagram"
+              "icon": "lucide-file",
+              "title": "AdGuard DNS"
             }
           }
         ],
@@ -194,25 +194,28 @@
       "bases:Create new base": false
     }
   },
-  "active": "dc63a086adcf7714",
+  "active": "3e4d61239ff17c06",
   "lastOpenFiles": [
+    "docs/img/Screenshot_20260425_123947_Vivaldi.jpg",
+    "docs/AdGuard DNS.md",
+    "docs/img/Screenshot_20260425_175945_Settings.jpg",
+    "docs/Initial Setup.md",
+    "docs/Docker.md",
+    "docs/Navidrome.md",
+    "Screenshot.md",
     "docs/img/Screenshot 2026-04-25 at 4.55.31 PM.png",
+    "docs/img/Screenshot 2026-04-25 at 5.45.27 PM.png",
+    "docs/img/Screenshot 2026-04-23 at 4.29.07 PM.png",
+    "docs/img/Screenshot 2026-04-23 at 4.28.17 PM.png",
+    "docs/img/Screenshot_20260423_145625_Instagram.jpg",
     "README.md",
     "docs/img/DSC00339.jpg",
-    "docs/Initial Setup.md",
     "Home Server/Initial Setup.md",
     "Home Server/AdGuard DNS.md",
     "Home Server/Docker.md",
     "Home Server/Navidrome.md",
     "Home Server/Screenshot_20260423_145625_Instagram.jpg",
     "Screenshot 2026-04-23 at 4.58.49 PM.png",
-    "Screenshot 2026-04-23 at 4.56.39 PM.png",
-    "Home Server/Screenshot 2026-04-23 at 4.28.17 PM.png",
-    "Home Server/Screenshot 2026-04-23 at 4.29.07 PM.png",
-    "Home Server/Screenshot_20260423_165318_Settings.jpg",
-    "Home Server/Screenshot_20260423_145823_One UI Home.jpg",
-    "Home Server/Screenshot_20260423_150202_Spotify.jpg",
-    "Home Server/Screenshot_20260423_150730_One UI Home.jpg",
     "Untitled.md",
     "Home Server",
     "133/OSPF Summary LSA.md",
@@ -233,14 +236,10 @@
     "143a",
     "Personal/JPL Interview/53/hw3.md",
     "Personal/JPL Interview/33 Project.md",
-    "Personal/JPL Interview/122a Project.md",
-    "Personal/JPL Interview/makefiles.md",
     "Personal/JPL Interview/53/Untitled",
-    "Personal/About JPL.md",
     "Personal/JPL Interview/53",
     "Personal/JPL Interview",
     "Personal",
-    "122b/Unit 3/Kubernetes.md",
     "React"
   ]
 }
