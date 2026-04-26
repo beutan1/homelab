@@ -65,6 +65,6 @@ The issue that I had was that I had a custom Private DNS on my phone to `dns.adg
 
 The solution to this would be to actually put AdGuard DNS on Tailscale, since I'm already going to be connected to it. That way, there would be no DNS conflict. Since I already have AdGuard DNS running on my home server, there isn't a reason to rely on their public IP address for their ad blocking, as I have my own.
 
-<img src="Screenshot 2026-04-25 at 4.55.31 PM.png" style="max-width: 100%; width: 250px;">
+<img src="img/Screenshot 2026-04-25 at 4.55.31 PM.png" style="max-width: 100%">
 
 > Now, I simply went onto the Tailscale admin page to add the IP address of my own Thinkpad which is running an active AdGuard container.
