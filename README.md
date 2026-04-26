@@ -30,7 +30,6 @@ Thus, I installed Ubuntu Server on it, instead of having it collect dust on the 
 
 # Uses
 Having now had this server for almost two weeks, I have been using it to block ads using AdGuard DNS, and to stream my personal CD collection and other music that I have downloaded. This allows me to save money from subscription services like Spotify, and having used TailScale, provide free music streaming to my girlfriend and I!
->>>>>>> eb9ef6f (Added image of homelab + laptop SSH'ed into it)
 
 More info can be found in the `/docs` folder, starting with [Initial Setup](</docs/Initial Setup.md>).
 
