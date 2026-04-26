@@ -78,7 +78,7 @@ docker compose up -d
 
 Now, we can go to the server IP address. Since I'm using TailScale, I can just go to the Thinkpad's Tailscale IP address, and see the page.
 
-<img src="Screenshot 2026-04-25 at 5.45.27 PM.png">
+<img src="img/Screenshot 2026-04-25 at 5.45.27 PM.png">
 
 Although the dashboard may not look like that initially, we just have to go through some setup, such as creating an admin username & password. For me, I had to go through some tedious Verizon network settings to set this up for my whole home network.
 
@@ -88,7 +88,9 @@ Although the dashboard may not look like that initially, we just have to go thro
 What I had to do was to go into Network settings, DNS Server, and put my Thinkpad's IP address into there.
 
 Then, on my phone, I had to go into my apartment's wifi from Verizon, and change change IP settings to Static, with my ThinkPad's IP address.
-<img src="Screenshot_20260425_175945_Settings.jpg" style="max-width: 100%; width: 300px;">
+
+<img src="img/Screenshot_20260425_175945_Settings.jpg" style="max-width: 100%; width: 300px;">
+
 After that, it should work, but the above steps get it working for laptops like my Macbook.
 
-<img src="Screenshot_20260425_123947_Vivaldi.jpg" style="max-width: 100%; width: 300px;">
+<img src="img/Screenshot_20260425_123947_Vivaldi.jpg" style="max-width: 100%; width: 300px;">
