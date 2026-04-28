@@ -11,30 +11,60 @@
             "id": "574b465104fb5500",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "docs/img/Screenshot_20260425_123947_Vivaldi.jpg"
-              },
-              "icon": "lucide-image",
-              "title": "Screenshot_20260425_123947_Vivaldi"
-            }
-          },
-          {
-            "id": "3e4d61239ff17c06",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "docs/Grafana.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Grafana"
+            }
+          },
+          {
+            "id": "f675d288b9178887",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Docker.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Docker"
+            }
+          },
+          {
+            "id": "e373a1795bc6d6d4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Monitoring.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Monitoring"
+            }
+          },
+          {
+            "id": "410086fa9c181734",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Initial Monitoring (Old)/Prometheus.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Prometheus"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -194,30 +224,30 @@
       "bases:Create new base": false
     }
   },
-  "active": "3e4d61239ff17c06",
+  "active": "e373a1795bc6d6d4",
   "lastOpenFiles": [
-    "docs/img/20260426_135901-2.jpg",
-    "docs/img/20260426_135901.jpg",
-    "docs/img/Screenshot_20260425_123947_Vivaldi.jpg",
-    "README.md",
-    "docs/Navidrome.md",
-    "docs/AdGuard DNS.md",
-    "docs/img/Screenshot 2026-04-25 at 7.15.58 PM.png",
-    "docs/img/Screenshot_20260425_175945_Settings.jpg",
-    "docs/Initial Setup.md",
+    "docs/Initial Monitoring (Old)/Prometheus.md",
+    "docs/Monitoring.md",
     "docs/Docker.md",
-    "Screenshot.md",
-    "docs/img/Screenshot 2026-04-25 at 4.55.31 PM.png",
-    "docs/img/Screenshot 2026-04-25 at 5.45.27 PM.png",
-    "docs/img/Screenshot 2026-04-23 at 4.29.07 PM.png",
+    "docs/Initial Monitoring (Old)",
+    "docs/img/Screenshot 2026-04-27 at 4.21.23 PM.png",
+    "docs/img/Screenshot 2026-04-27 at 4.18.43 PM.png",
+    "docs/img/Screenshot 2026-04-27 at 4.02.10 PM.png",
+    "docs/Tailscale.md",
+    "docs/img/Screenshot 2026-04-27 at 3.56.30 PM.png",
+    "docs/img/Screenshot_20260425_123947_Vivaldi.jpg",
+    "docs/img/tailscale-dns-settings.png",
+    "docs/img/20260426_135901-2.jpg",
     "docs/img/Screenshot 2026-04-23 at 4.28.17 PM.png",
-    "docs/img/Screenshot_20260423_145625_Instagram.jpg",
-    "docs/img/DSC00339.jpg",
+    "docs/img/Screenshot 2026-04-23 at 4.29.07 PM.png",
+    "docs/img/Screenshot 2026-04-25 at 5.45.27 PM.png",
+    "docs/Initial Monitoring (Old)/Navidrome.md",
+    "docs/Grafana.md",
+    "docs/Initial Setup.md",
     "Home Server/Initial Setup.md",
     "Home Server/AdGuard DNS.md",
     "Home Server/Docker.md",
     "Home Server/Navidrome.md",
-    "Untitled.md",
     "Home Server",
     "133/OSPF Summary LSA.md",
     "133/Untitled.md",
@@ -237,10 +267,10 @@
     "143a",
     "Personal/JPL Interview/53/hw3.md",
     "Personal/JPL Interview/33 Project.md",
+    "Personal/JPL Interview/122a Project.md",
     "Personal/JPL Interview/53/Untitled",
     "Personal/JPL Interview/53",
     "Personal/JPL Interview",
-    "Personal",
-    "React"
+    "Personal"
   ]
 }
