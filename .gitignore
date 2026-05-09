@@ -10,6 +10,7 @@ secrets/
 
 # Ignore system and log files
 *.log
+*._
 .DS_Store
 thumbs.db
 
@@ -20,3 +21,6 @@ thumbs.db
 adguard/workdir/
 adguard/confdir/
 
+# Ignore Obsidian files
+**/.obsidian/
+**/.trash/
