@@ -114,3 +114,75 @@ Where we can see that it shows in fastfetch now as an external hard drive with ~
 ```bash
 Disk (/mnt/data)**: 28.00 KiB / 915.82 GiB (0%) - ext4
 ```
+
+ADD INFORMATION ON MOVING FILES TO HARD DRIVE, AND THEN RE-ROUTING NAVIDROME AND JELLYFIN
+
+ALSO RELAUNCH WITH THE NEW DOCKER-COMPOSE FOR SLSKD
+
+RECONFIGURE JELLYFIN FILES
+
+# Moving files
+Now that my external 1TB drive was ready to use, it was time to move all of my large video & music files onto the drive.
+
+Since the standard "mv" command is slow for such large files, we can use `rsync` instead.
+Note that before running the below commands, I mounted my new drive at `/mnt/data/` and created a music directory, and video directory separated into shows & movies.
+
+```bash
+rsync -avP --remove-source-files video/shows/ /mnt/data/video/shows/
+rsync -avP --remove-source-files video/movies/ /mnt/data/video/movies/
+rsync -avP --remove-source-files music/ /mnt/data/music/
+```
+> Where we can transfer a large amount of files using those specific flags to move the files from one drive to another much faster.
+
+Now, it was a matter of changing the `docker-compose` files of both Jellyfin & Navidrome to allow them to access the new file source directories. Respectively, they were changed to be these:
+
+```yml
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    user: "1000:1000" # should be owner of volumes
+    ports:
+      - "4533:4533"
+    restart: unless-stopped
+    volumes:
+      - "/home/justinh/homelab/navidrome/data:/data"
+      - "/mnt/data/music:/music:ro"
+```
+> Last line changed
+
+```yml
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    # Optional - specify the uid and gid you would like Jellyfin to use instead of root
+    user: 1000:1000
+    ports:
+      - 8096:8096/tcp
+      - 7359:7359/udp
+    volumes:
+      - /jellyfin/config:/config
+      - /jellyfin/cache:/cache
+      # Separate directories for movies & shows, both are readonly
+      - /mnt/data/video/movies:/media/movies:ro
+      - /mnt/data/video/shows:/media/shows:ro
+    restart: 'unless-stopped'
+    # Optional - alternative address used for autodiscovery
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://example.com
+    # Optional - may be necessary for docker healthcheck to pass if running in host network mode
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+```
+> Bottom two lines in the `volumes` group changed
+
+Now, we simply have to just go to these directories and run these familiar two commands:
+
+```bash
+docker compose down
+docker compose up -d --force-recreate
+```
+
+Where it should be running and getting sources from our new drive!
+I went ahead and copied our current Grafana panels, and changed the drive mount points from `/` to `/mnt/data` to display information of our new drive.
+<img src="img/external_0_grafana.png">

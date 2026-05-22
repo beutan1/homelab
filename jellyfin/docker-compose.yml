@@ -11,8 +11,8 @@ services:
       - /jellyfin/config:/config
       - /jellyfin/cache:/cache
       # Separate directories for movies & shows, both are readonly
-      - /home/justinh/video/movies:/media/movies:ro
-      - /home/justinh/video/shows:/media/shows:ro
+      - /mnt/data/video/movies:/media/movies:ro
+      - /mnt/data/video/shows:/media/shows:ro
     restart: 'unless-stopped'
     # Optional - alternative address used for autodiscovery
     environment:

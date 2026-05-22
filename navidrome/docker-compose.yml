@@ -7,5 +7,5 @@ services:
     restart: unless-stopped
     volumes:
       - "/home/justinh/homelab/navidrome/data:/data"
-      - "/home/justinh/music:/music:ro"
+      - "/mnt/data/music:/music:ro"
 

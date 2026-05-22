@@ -10,7 +10,7 @@ secrets/
 
 # Ignore system and log files
 *.log
-*._
+._*
 .DS_Store
 thumbs.db
 
