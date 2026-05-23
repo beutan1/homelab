@@ -1,0 +1,15 @@
+LOCAL_IP=127.0.0.1
+APP_IMAGE_REPO=local-registry/data-sync-gateway:stable
+
+# Internal Key Bindings
+ENV_KEY_REMOTE=CORE_REMOTE_ENABLED
+ENV_KEY_USER=GATEWAY_ADMIN
+ENV_KEY_PASS=GATEWAY_TOKEN
+ENV_KEY_CLIENT_USER=NODE_CLIENT_ID
+ENV_KEY_CLIENT_PASS=NODE_CLIENT_SECRET
+
+# Dummy Credentials
+ADMIN_USER=admin
+ADMIN_PASS=super_secure_password_placeholder
+SLSK_USER=node_user_01
+SLSK_PASS=node_secret_token_placeholder

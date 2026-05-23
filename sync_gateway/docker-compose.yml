@@ -1,0 +1,24 @@
+---
+services:
+  sync_gateway:
+    image: ${APP_IMAGE_REPO}
+    container_name: file_sync
+    ports:
+      - "5030:5030"
+      - "5031:5031"
+      # Share ports
+      - "${LOCAL_IP}:50300:50300"
+      - "${LOCAL_IP}:50301:50301"
+    environment:
+      - ${ENV_KEY_REMOTE}=true
+      - ${ENV_KEY_USER}=${ADMIN_USER}
+      - ${ENV_KEY_PASS}=${ADMIN_PASS}
+      - ${ENV_KEY_CLIENT_USER}=${USER}
+      - ${ENV_KEY_CLIENT_PASS}=${PASS}
+    volumes:
+      - /mnt/data/downloads:/app/downloads:rw
+      - /mnt/data/gateway_config:/app:rw
+      - /mnt/data/music:/music:rw
+      - /mnt/data/video:/video:rw
+    user: 1000:1000
+    restart: always
