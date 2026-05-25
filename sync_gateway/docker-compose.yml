@@ -15,9 +15,10 @@ services:
       - ${ENV_KEY_PASS}=${ADMIN_PASS}
       - ${ENV_KEY_CLIENT_USER}=${USER}
       - ${ENV_KEY_CLIENT_PASS}=${PASS}
+      - ${ENV_KEY_CLIENT_DESC}=${DESC}
     volumes:
       - /mnt/data/downloads:/app/downloads:rw
-      - /mnt/data/gateway_config:/app:rw
+      - ./config:/app/config:rw
       - /mnt/data/music:/music:rw
       - /mnt/data/video:/video:rw
     user: 1000:1000

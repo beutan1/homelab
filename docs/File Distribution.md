@@ -81,3 +81,35 @@ APP_PASS=node_secret_token_placeholder
 
 # Port forwarding
 Then now, we need to `port forward` ports 50300 and 50301 so that people can download from the server, bypassing the zero-trust.
+
+# Extra changes
+I moved the `.config` files from the external hard drive to the NVME, as it would make more sense for it to be there. Here is the adjusted `docker-compose.yml`
+
+```bash
+justinh@thinkpad-ubuntu:~/homelab/sync_gateway$ cat docker-compose.yml 
+---
+services:
+  sync_gateway:
+    image: ${APP_IMAGE_REPO}
+    container_name: file_sync
+    ports:
+      - "5030:5030"
+      - "5031:5031"
+      # Share ports
+      - "${LOCAL_IP}:50300:50300"
+      - "${LOCAL_IP}:50301:50301"
+    environment:
+      - ${ENV_KEY_REMOTE}=true
+      - ${ENV_KEY_USER}=${ADMIN_USER}
+      - ${ENV_KEY_PASS}=${ADMIN_PASS}
+      - ${ENV_KEY_CLIENT_USER}=${USER}
+      - ${ENV_KEY_CLIENT_PASS}=${PASS}
+      - ${ENV_KEY_CLIENT_DESC}=${DESC}
+    volumes:
+      - /mnt/data/downloads:/app/downloads:rw
+      - ./config:/app/config:rw
+      - /mnt/data/music:/music:rw
+      - /mnt/data/video:/video:rw
+    user: 1000:1000
+    restart: always
+```
