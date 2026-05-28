@@ -95,3 +95,35 @@ Where finally, we can simply just run this using:
 docker compose up -d
 ```
 > in the `/homelab/audiobookshelf` directory.
+
+## Additional
+Later on, I realized that there could be more hardware utilization by my server for *Trickplay* on Jellyfin. Because of that, I had to first enable these two options in Jellyfin settings, and edit my `docker-compose` as is shown below.
+
+<img src="img/jellyfin_trickplay.png">
+
+```yml
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    user: 1000:1000
+    ports:
+      - 8096:8096/tcp
+      - 7359:7359/udp
+    volumes:
+      - /jellyfin/config:/config
+      - /jellyfin/cache:/cache
+      # Separate directories for movies & shows, both are readonly
+      - /mnt/data/video/movies:/media/movies:ro
+      - /mnt/data/video/shows:/media/shows:ro
+    devices:
+      - /dev/dri:/dev/dri
+    restart: 'unless-stopped'
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://example.com
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+```
+> Where we just added the server GPU as the device.
+
+Now, we can just stop and re-run the container.
