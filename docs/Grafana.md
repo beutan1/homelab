@@ -104,3 +104,5 @@ mkdir: can't create directory '/var/lib/grafana/plugins': Permission denied
 [sudo] password for justinh:
 ```
 > Where we can see here that there is issues with the grafana directory not being writable. Thus, we have to fix the permissions for that. This just gives permissions to user= "1000:1000" which we specified in the `yml`file in `docker-config`, and allows us write permissions into that directory that had previously denied permissions
+## Quirk
+Something that I noticed as I performed my first system reboot is that the external drive becomes bisected along the `used` and `free` storage in Grafana. Because of that, I had to apply a transformation on that graph, using a merge series.

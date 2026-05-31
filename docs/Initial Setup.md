@@ -60,3 +60,14 @@ sudo tlp-stat -b
 ```
 
 Finally, the server was ready for [Docker](Docker.md) installation.
+
+## Typical Updating
+
+Just run these two commands to get updates every now and again, and reboot the server.
+
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+and then `sudo reboot` if necessary.

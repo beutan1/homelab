@@ -24,3 +24,6 @@ adguard/confdir/
 # Ignore Obsidian files
 **/.obsidian/
 **/.trash/
+
+# Ignore "postgres" directory from Immich
+postgres/
