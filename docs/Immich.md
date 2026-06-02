@@ -64,23 +64,112 @@ The best tool that you can use for this transfer is [immich-go](https://github.c
 sudo snap install go --classic
 ```
 
-
-I just ran this to move the file from my laptop to server.
-```Bash
-rsync -P takeout-20260529T024437Z-3-001.zip thinkpad:~
-```
-> Where we use rsync and the `-P` flag to show progress and pause the transfer when your computer sleeps to protect against corruption. If there is a broken pipe or anything, you can also just run the same command to continue where you left off!
+What I did for my Macbook was actually install `immich-go` on there as well, and move the `immich-go` binary to the `~/Downloads` directory with my desired takeout files. This allows me to use a program specifically designed to transport and import these huge files directly into Immich, rather than dropping the files in via `rsync`, and possibly having to restart the transfer.
 
 ```bash
-client_loop: send disconnect: Broken pipe
-rsync(15865): error: unexpected end of file
-➜  Downloads rsync -P takeout-20260529T024437Z-3-001.zip thinkpad:~
-takeout-20260529T024437Z-3-001.zip
-     5727802080  12%  315.29MB/s   00:02:112:34
+brew install immich-go
+
+cd /opt/homebrew/Cellar/immich-go/0.31.0/bin
+cp immich-go ~/Downloads # Where it can be easily accessed and run
 ```
 
-Then finally, after a long transfer, we just have to run `immich-go`.
+Now finally, we can just run these commands:
+
+For root user (me):
 
 ```bash
-~/go/bin/immich-go --server=http://[server_ip]:2283 --api-key=[secret] upload from-google-photos takeout-20260529T024437Z-3-001.zip
+./immich-go upload from-google-photos \
+  --server=http://[ip]:2283 \
+  --api-key=[key] \
+  ./takeout-*.zip # Target every takeout file rather than running multiple times
 ```
+
+For standard user:
+```bash
+./immich-go upload from-google-photos \
+  --server=http://[ip]:2283 \
+  --api-key=[user key] \
+  --admin-api-key=[my admin key] \
+  ./takeout-*.zip
+```
+> Where including the admin key allows the server to focus resources on this upload rather than utilizing resources while uploading.
+
+Note that for some imports, I also had to use some flags like:
+- `--concurrent-tasks=2` to prevent thrashing
+- `--client-timeout=2h` for large file imports
+- `--on-errors=continue` for problematic imports with constant errors on large files.
+## Hardware Acceleration
+> Note: I had forgotten two other `yml` files, here is how to get them:
+> 1. `cd` into the `immich` directory
+> 2. run these commands: 
+> 	```bash
+> 	wget https://github.com/immich-app/immich/releases/latest/download/hwaccel.transcoding.yml
+> 	wget https://github.com/immich-app/immich/releases/latest/download/hwaccel.ml.yml
+> 	```
+
+The first thing I had to do was make sure that I could monitor my integrated GPU through installing `intel-gpu-tools`
+
+```bash
+sudo apt install intel-gpu-tools
+```
+
+<img src="img/no_gpu_utilization.png">
+> Where we can see here when monitoring it using `sudo intel_gpu_top`, there is zero usage.
+
+Because of this, we have to actually edit the `docker-compose.yml`. We do something similar to what we did with [[Jellyfin]]. 
+
+```bash
+services:
+  immich-server:
+    container_name: immich_server
+    image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
+    extends:
+      file: hwaccel.transcoding.yml
+      service: quicksync
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - ${UPLOAD_LOCATION}:/data
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - .env
+    ports:
+      - '2283:2283'
+    depends_on:
+      - redis
+      - database
+    restart: always
+    healthcheck:
+      disable: false
+
+  immich-machine-learning:
+    container_name: immich_machine_learning
+    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}-openvino
+    extends:
+      file: hwaccel.ml.yml
+      service: openvino
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - model-cache:/cache
+    env_file:
+      - .env
+    restart: always
+    healthcheck:
+      disable: false
+```
+> Where we add/uncomment the section beginning with `extends:`, while adding our GPU under `devices:` like we did for Jellyfin. We have to do this for both `immich-server` and `immich-machine-learning`. 
+
+Now, because we changed the actual tag to `immich-machine-learning:release-openvino`, we have to run a different command:
+
+```bash
+docker compose pull
+```
+> What this does is it checks the actual repository instead of just a local change and stopping the container like we usually do, since this is a change to an entirely different image variant. Thus, it needs to be updated as such before running the familiar:
+
+```bash
+docker compose up -d
+```
+
+<img src="img/gpu_utilization.png">
+> Where we can see that our GPU is now hard at work uploading a test video!
