@@ -186,3 +186,52 @@ docker compose up -d --force-recreate
 Where it should be running and getting sources from our new drive!
 I went ahead and copied our current Grafana panels, and changed the drive mount points from `/` to `/mnt/data` to display information of our new drive.
 <img src="img/external_0_grafana.png">
+## Power outage
+Due to a power outage, the hard drive somehow disconnected from my server.
+
+```bash
+justinh@thinkpad-ubuntu:~/homelab/navidrome$ cd /mnt/data
+justinh@thinkpad-ubuntu:/mnt/data$ ls
+ls: reading directory '.': Input/output error
+```
+> Where we can see here, we can't access this directory where my 1tb hard drive is.
+
+I first noticed this when trying to play music: all of my music is stored on this drive, but I was constantly getting errors:
+
+<img src="img/music_not_playing.png">
+
+Where ultimately, the issue was that I couldn't even access the files in that drive.
+
+This is confirmed by seeing if the files were actually mounted or not:
+
+```bash
+justinh@thinkpad-ubuntu:~/homelab/navidrome$ df -h
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              1.6G  6.5M  1.6G   1% /run
+efivarfs                           154K   68K   82K  46% /sys/firmware/efi/efivars
+/dev/mapper/ubuntu--vg-ubuntu--lv  232G   33G  188G  15% /
+tmpfs                              7.7G     0  7.7G   0% /dev/shm
+tmpfs                              5.0M     0  5.0M   0% /run/lock
+/dev/nvme0n1p2                     2.0G  201M  1.6G  11% /boot
+/dev/nvme0n1p1                     1.1G  6.2M  1.1G   1% /boot/efi
+/dev/sda1                          916G  255G  662G  28% /mnt/data
+tmpfs                              1.6G   12K  1.6G   1% /run/user/1000
+```
+> Where strangely enough, despite what we saw earlier, it *appears* to be mounted, however the directory is inaccessible.
+
+Because of this, we will have to unmount the drive, disconnect it, reconnect and re-mount the drive.
+
+First, unmount the drive.
+```bash
+sudo umount -l /mnt/data
+```
+
+Then, we can just re-mount and check.
+```bash
+justinh@thinkpad-ubuntu:~$ sudo mount -a
+justinh@thinkpad-ubuntu:~$ ls /mnt/data
+audiobooks  downloads  lost+found  music  photos  video
+justinh@thinkpad-ubuntu:~$ 
+```
+
+Finally, we can just restart the docker containers for Immich and Navidrome to have music and images working again.
