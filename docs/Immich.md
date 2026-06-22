@@ -173,3 +173,19 @@ docker compose up -d
 
 <img src="img/gpu_utilization.png">
 > Where we can see that our GPU is now hard at work uploading a test video!
+
+## Search not working
+Something that was happening was that searching was not working anymore on Immich.
+I realized that this had to do with something like the recent power outage that required many containers to be rebooted, and I may have missed the AI container for searching in Immich. The following was the error:
+
+<img src="immich_search_fail.png">
+Where I didn't get any results here.
+
+Simply running this command fixed it for me:
+
+```bash
+docker compose down
+docker compose up -d
+```
+> Where this must have been one of the containers that I had missed at the time of handing the power outage.
+

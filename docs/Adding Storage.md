@@ -234,4 +234,4 @@ audiobooks  downloads  lost+found  music  photos  video
 justinh@thinkpad-ubuntu:~$ 
 ```
 
-Finally, we can just restart the docker containers for Immich and Navidrome to have music and images working again.
+Finally, we can just restart the docker containers for Immich, Navidrome, and sync_gateway to have music and images working again.
