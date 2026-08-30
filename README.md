@@ -29,7 +29,7 @@ Before long, I realized that I had to try something else. I decided to use my Th
 Thus, I installed Ubuntu Server on it, instead of having it collect dust on the carpet.
 
 # Uses
-Having now had this server for about 1 month, I have been using it to globlly block ads using AdGuard Home, and to stream my personal CD collection/music and downloaded movies from anywhere. This allows me to save money from subscription services like Spotify or Netflix, and having used TailScale, provide free music/movie streaming to my girlfriend and I! It even allows me to download and share files with 24/7 uptime!
+Having now had this server for about April 2026, I have been using it to globlly block ads using AdGuard Home, and to stream my personal CD collection/music and downloaded movies from anywhere. This allows me to save money from subscription services like Spotify or Netflix, and having used TailScale, provide free music/movie streaming to my girlfriend and I! It even allows me to download and share files with 24/7 uptime!
 
 More info can be found in the `/docs` folder, starting with [Initial Setup](</docs/Initial Setup.md>).
 
