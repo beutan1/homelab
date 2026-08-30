@@ -21,5 +21,4 @@ services:
       - ./config:/app/config:rw
       - /mnt/data/music:/music:rw
       - /mnt/data/video:/video:rw
-    user: 1000:1000
     restart: always

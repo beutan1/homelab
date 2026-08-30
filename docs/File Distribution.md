@@ -110,6 +110,6 @@ services:
       - ./config:/app/config:rw
       - /mnt/data/music:/music:rw
       - /mnt/data/video:/video:rw
-    user: 1000:1000
     restart: always
 ```
+> Note that I had to remove the last line `user: 1000:1000` due to there being permission errors with the new release of this docker image. The above updated docker-compose is working.
